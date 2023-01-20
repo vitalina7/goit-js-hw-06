@@ -7,13 +7,14 @@ function onFormSubmit(event) {
     const password = formElements.password.value;
 
 if (email === '' || password === '') {
-        alert('Please, fill this form correctly')
+    alert('Please, fill this form correctly');
     } else {
         const formData = {
             email,
             password,
         };
-        console.log(formData);
-    }
+    console.log(formData);
     event.currentTarget.reset();
+    }
+  
 }
