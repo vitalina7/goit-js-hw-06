@@ -1,9 +1,10 @@
-const textInput = document.querySelector('#name-input')
-const output = document.querySelector('#name-output')
-textInput.addEventListener('input', event => {
-	output.textContent = event.target.value
+const inputEl = document.querySelector('#name-input')
+const outputEl = document.querySelector('#name-output')
+let currentText = inputEl.value ? "Anonymous" : inputEl.value;
+outputEl.textContent = currentText;
 
-	if (event.target.value === '') {
-		output.textContent = 'Anonymous'
-	}
-})
+inputEl.addEventListener("input", makeOutputText);
+function makeOutputText(event){
+	currentText = event.currentTarget.value ? event.currentTarget.value : "Anonymous";
+	outputEl.textContent = currentText;
+}
